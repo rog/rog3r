@@ -1,0 +1,19 @@
+{
+  "name": "rog3r",
+  "version": "1.0.0",
+  "description": "Contact Information about Rogelio Alberto",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cat me.json; say 'Rog says Hello'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rogr/rog3r"
+  },
+  "keywords": [ "person", "contact" ],
+  "author": "Rogelio Alberto",
+  "license": "MIT"
+}
