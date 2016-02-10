@@ -8,7 +8,7 @@
   "main": "./index.js",
   "scripts": {
     "build": "node ./node_modules/babel-cli/bin/babel index.js -d lib",
-    "prestart": "npm run build",
+    "prestart": "npm run build && cp me.json lib/me.json",
     "start": "node lib/index",
     "postinstall": "cat me.json; say 'Rog says Hello'"
   },
