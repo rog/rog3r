@@ -5,10 +5,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "./lib/index.js",
+  "main": "./lib/src/rog.js",
   "scripts": {
-    "build": "node ./node_modules/babel-core/bin/babel src/index.js -d lib",
-    "postinstall": "cat src/me.json; say 'Rog says Hello'",
+    "build": "node ./node_modules/babel-cli/bin/babel src/rog.js -d lib && cp src/me.json lib/src/me.json",
+    "postinstall": "cat lib/src/me.json; say 'Rog says Hello'",
     "watch": "webpack --watch"
   },
   "repository": {
@@ -20,9 +20,7 @@
     "contact"
   ],
   "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "presets": ["es2015"]
   },
   "author": "Rogelio Alberto",
   "license": "MIT",

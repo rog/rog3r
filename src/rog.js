@@ -1,4 +1,4 @@
-import fs from 'fs'
+const fs = require('fs')
 
 class CoolDude {
   constructor () {
@@ -10,12 +10,12 @@ class CoolDude {
   }
 
   twitter () {
-    return 'twitter :D'
+    return 'twitter'
   }
 }
 const rog3r = new CoolDude()
 
-export default rog3r.info()
 export function twitter () {
-  rog3r.twitter()
+  console.log(rog3r.twitter())
 }
+export default rog3r
