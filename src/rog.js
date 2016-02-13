@@ -2,11 +2,18 @@ const fs = require('fs')
 
 class CoolDude {
   constructor () {
-    this.props = JSON.parse(fs.readFileSync(__dirname + '/me.json', 'utf8'))
+    const info = JSON.parse(fs.readFileSync(__dirname + '/me.json', 'utf8'))
+    this.props = {...info}
+    this.props.info = () => { return info }
+    this.props.getTweets = this.twitter
+    this.props.getName = this.name
+    return this.props
   }
 
-  info () {
-    return this.props
+  name () {
+    const name = 'Rogelio'
+    const lastName = 'Alberto'
+    return `${name} ${lastName}`
   }
 
   twitter () {
@@ -15,7 +22,4 @@ class CoolDude {
 }
 const rog3r = new CoolDude()
 
-export function twitter () {
-  console.log(rog3r.twitter())
-}
 export default rog3r
