@@ -12,7 +12,7 @@ class CoolDude {
 
   name () {
     const name = 'Rogelio'
-    const lastName = 'Alberto'
+    const lastName = 'Alberto :D'
     return `${name} ${lastName}`
   }
 
