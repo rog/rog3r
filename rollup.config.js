@@ -8,7 +8,7 @@ import filesize from 'rollup-plugin-filesize'
 const logger = (now) => {
   const logName = chalk.white.bgBlue.bold('[rog3r]')
   const logDate = chalk.cyan(` ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`)
-  return `${logName}${logDate}`
+  return `\r${logName}${logDate}`
 }
 
 const fsOptions = {
@@ -23,7 +23,7 @@ export default {
   format: 'cjs',
   plugins: [
     json(), buble(),
-    uglify({}, minify),
+    // uglify({}, minify),
     filesize(fsOptions)
   ],
   dest: 'lib/rog.js'

@@ -30,5 +30,8 @@
     "rollup-plugin-filesize": "^0.3.4",
     "rollup-plugin-json": "^2.0.0",
     "rollup-plugin-uglify": "^0.3.1"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^1.0.0"
   }
 }
