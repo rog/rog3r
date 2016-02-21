@@ -1,4 +1,4 @@
-import request from './utils/request'
+import request from 'request'
 const fs = require('fs')
 
 class CoolDude {
@@ -23,7 +23,17 @@ class CoolDude {
   }
 
   githubActivity () {
-    return request('https://api.github.com/users/rogr/events')
+    request({
+      url: 'https://api.github.com/users/rogr/events',
+      headers: {
+        'User-Agent': 'request'
+      }
+    }, function (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        var info = JSON.parse(body)
+        console.log(info)
+      }
+    })
   }
 }
 const rog3r = new CoolDude()
