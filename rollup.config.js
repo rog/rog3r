@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import { minify } from 'uglify-js'
 import json from 'rollup-plugin-json'
-import buble from 'rollup-plugin-buble'
+import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
 import filesize from 'rollup-plugin-filesize'
 
@@ -22,8 +22,14 @@ export default {
   entry: 'src/rog.js',
   format: 'cjs',
   plugins: [
-    json(), buble(),
-    // uglify({}, minify),
+    json(),
+    babel({
+      presets: ['es2015-rollup', 'stage-0'],
+      exclude: 'node_modules/**',
+      plugins: ['transform-runtime'],
+      runtimeHelpers: true
+    }),
+    uglify({}, minify),
     filesize(fsOptions)
   ],
   dest: 'lib/rog.js'

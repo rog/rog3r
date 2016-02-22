@@ -23,18 +23,27 @@ class CoolDude {
   }
 
   githubActivity () {
-    request({
-      url: 'https://api.github.com/users/rogr/events',
+    var options = {
+      url: 'https://api.github.com/users/' + this.github + '/events',
       headers: {
         'User-Agent': 'request'
       }
-    }, function (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        var info = JSON.parse(body)
-        console.log(info)
+    }
+
+    return new Promise(function (resolve, reject) {
+      try {
+        return request(options, function (err, res, body) {
+          if (!err && res.statusCode === 200) {
+            resolve(JSON.parse(body))
+          }
+        })
+      } catch (e) {
+        reject(e)
+        return
       }
     })
   }
+
 }
 const rog3r = new CoolDude()
 
