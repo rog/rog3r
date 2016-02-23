@@ -23,7 +23,7 @@ class CoolDude {
   }
 
   githubActivity () {
-    var options = {
+    const options = {
       url: 'https://api.github.com/users/' + this.github + '/events',
       headers: {
         'User-Agent': 'request'
