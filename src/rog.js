@@ -3,12 +3,14 @@ const fs = require('fs')
 
 class CoolDude {
   constructor () {
-    const info = JSON.parse(fs.readFileSync(__dirname + '/me.json', 'utf8'))
+    const info = JSON.parse(fs.readFileSync(`${__dirname}/me.json`, 'utf8'))
     this.props = info
     this.props.info = () => { return info }
     this.props.getTweets = this.getTweets
     this.props.getName = this.getName
     this.props.githubActivity = this.githubActivity
+    this.props.reqGitActivity = this.reqGitActivity
+    this.props.activity = null
     return this.props
   }
 
@@ -22,29 +24,32 @@ class CoolDude {
     return 'twitter'
   }
 
-  githubActivity () {
+  requestData (url) {
     const options = {
-      url: 'https://api.github.com/users/' + this.github + '/events',
+      url: url,
       headers: {
         'User-Agent': 'request'
       }
     }
 
-    return new Promise(function (resolve, reject) {
-      try {
-        return request(options, function (err, res, body) {
-          if (!err && res.statusCode === 200) {
-            resolve(JSON.parse(body))
-          }
-        })
-      } catch (e) {
-        reject(e)
-        return
-      }
+    return new Promise((resolve, reject) => {
+      request(options, (err, res, body) => {
+        if (err) {
+          reject(err)
+          return
+        }
+        this.activity = body
+        resolve(body)
+      })
     })
+  }
+
+  async githubActivity () {
+    return await this.requestData(`https://api.github.com/users/${this.github}/events`)
   }
 
 }
 const rog3r = new CoolDude()
 
+console.log(rog3r.githubActivity())
 export default rog3r

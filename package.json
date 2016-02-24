@@ -19,6 +19,9 @@
     "person",
     "contact"
   ],
+  "babel": {
+    "presets": ["es2015", "stage-0"]
+  },
   "author": "Rogelio Alberto",
   "license": "MIT",
   "devDependencies": {
