@@ -7,9 +7,9 @@
   },
   "main": "./lib/rog.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "./node_modules/.bin/babel-node src/rog.js",
     "postinstall": "cat lib/src/me.json; say 'Rog says Hello'",
-    "watch": "echo '[rog3r] Rollup Starting' && onchange 'src/*.js' -- rollup -c"
+    "watch": "echo '[rog3r] Rollup Starting' && onchange 'src/*.js' -- ./node_modules/.bin/babel-node"
   },
   "repository": {
     "type": "git",
