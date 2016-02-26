@@ -11,6 +11,8 @@
     "postinstall": "cat lib/src/me.json; say 'Rog says Hello'",
     "watch": "echo '[rog3r] Rollup Starting' && onchange 'src/*.js' -- ./node_modules/.bin/babel-node"
   },
+  "author": "Rogelio Alberto",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/rogr/rog3r"
@@ -19,11 +21,9 @@
     "person",
     "contact"
   ],
-  "babel": {
-    "presets": ["es2015", "stage-0"]
+  "dependencies": {
+    "request": "^2.72.0"
   },
-  "author": "Rogelio Alberto",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.8.0",
@@ -37,7 +37,10 @@
     "rollup-plugin-json": "^2.0.0",
     "rollup-plugin-uglify": "^0.3.1"
   },
-  "dependencies": {
-    "request": "^2.72.0"
+  "babel": {
+    "presets": ["es2015", "stage-0"]
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
