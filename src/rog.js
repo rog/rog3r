@@ -2,29 +2,20 @@ import request from 'request'
 const fs = require('fs')
 
 class CoolDude {
-  constructor () {
+  constructor (props) {
     const info = JSON.parse(fs.readFileSync(`${__dirname}/me.json`, 'utf8'))
     this.props = info
-    this.props.info = () => { return info }
-    this.props.getTweets = this.getTweets
-    this.props.getName = this.getName
-    this.props.githubActivity = this.githubActivity
-    this.props.reqGitActivity = this.reqGitActivity
-    this.props.activity = null
-    return this.props
   }
 
-  getName () {
-    const name = 'Rogelio'
-    const lastName = 'Alberto'
-    return `${name} ${lastName}`
+  get name () {
+    return this.props.name
   }
 
   getTweets () {
     return 'twitter'
   }
 
-  requestData (url) {
+  static requestData (url) {
     const options = {
       url: url,
       headers: {
@@ -38,18 +29,20 @@ class CoolDude {
           reject(err)
           return
         }
-        this.activity = body
         resolve(body)
       })
     })
   }
 
   async githubActivity () {
-    return await this.requestData(`https://api.github.com/users/${this.github}/events`)
+    try {
+      return await CoolDude.requestData(`https://api.github.com/users/${this.props.github}/events`)
+    } catch (e) {
+      throw e
+    }
   }
 
 }
-const rog3r = new CoolDude()
 
-console.log(rog3r.githubActivity())
+const rog3r = new CoolDude()
 export default rog3r
