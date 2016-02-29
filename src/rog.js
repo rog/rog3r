@@ -7,14 +7,6 @@ class CoolDude {
     this.props = info
   }
 
-  get name () {
-    return this.props.name
-  }
-
-  getTweets () {
-    return 'twitter'
-  }
-
   static requestData (url) {
     const options = {
       url: url,
@@ -34,12 +26,20 @@ class CoolDude {
     })
   }
 
+  get info () {
+    return this.props
+  }
+
   async githubActivity () {
     try {
       return await CoolDude.requestData(`https://api.github.com/users/${this.props.github}/events`)
     } catch (e) {
       throw e
     }
+  }
+
+  async twitterActivity () {
+    return await 'twitter'
   }
 
 }
