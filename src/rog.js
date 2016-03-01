@@ -45,4 +45,5 @@ class CoolDude {
 }
 
 const rog3r = new CoolDude()
+
 export default rog3r
