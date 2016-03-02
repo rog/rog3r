@@ -11,7 +11,7 @@ class CoolDude {
     const options = {
       url: url,
       headers: {
-        'User-Agent': 'request'
+        'User-Agent': 'rog3r'
       }
     }
 
