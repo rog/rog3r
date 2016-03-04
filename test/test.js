@@ -27,3 +27,14 @@ test('Testing CoolDude', function (t) {
     t.end()
   })
 })
+
+test('Testing githubActivity', function (t) {
+  t.plan(1)
+
+  t.test('githubActivity should be a function', function (t) {
+    var rog3r = require('../lib/rog').default
+    t.equal(typeof rog3r, 'object')
+    t.equal(typeof rog3r.githubActivity, 'function')
+    t.end()
+  })
+})
