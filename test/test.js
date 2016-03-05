@@ -1,8 +1,5 @@
 var test = require('tape')
 var tapSpec = require('tap-spec')
-var _ = {
-  isEqual: require('lodash.isequal')
-}
 
 test.createStream()
   .pipe(tapSpec())
@@ -23,7 +20,7 @@ test('Testing CoolDude', function (t) {
     t.equal(typeof rog3r, 'object')
     t.equal(typeof rog3r.info, 'object')
     t.equal(typeof me, 'object')
-    t.equal(_.isEqual(rog3r.info, me), true)
+    t.deepEqual(rog3r.info, me)<
     t.end()
   })
 })
