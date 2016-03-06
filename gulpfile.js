@@ -10,7 +10,7 @@ gulp.task('build', function () {
     presets: ['es2015', 'stage-0'],
     plugins: ['transform-runtime']
   }))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(gulp.dest('lib'))
 })
 
