@@ -40,3 +40,18 @@ test('Testing githubActivity', function (t) {
     st.end()
   })
 })
+
+test('Testing twitterActivity', function (t) {
+  t.plan(1)
+
+  t.test('# twitterActivity should be a string', function (st) {
+    var rog3r = require('../lib/rog').default
+    st.equal(typeof rog3r, 'object')
+    st.equal(typeof rog3r.twitterActivity, 'function')
+    rog3r.twitterActivity()
+    .then(function (val) {
+      st.equal(typeof val, 'string')
+    })
+    st.end()
+  })
+})
