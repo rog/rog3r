@@ -30,12 +30,8 @@ class CoolDude {
     return this.props
   }
 
-  async githubActivity () {
-    try {
-      return await CoolDude.requestData(`https://api.github.com/users/${this.props.github}/events`)
-    } catch (e) {
-      throw e
-    }
+  async githubActivity (url) {
+    return await CoolDude.requestData(`https://api.github.com/users/${this.props.github}/events`)
   }
 
   async twitterActivity () {
@@ -44,6 +40,4 @@ class CoolDude {
 
 }
 
-const rog3r = new CoolDude()
-
-export default rog3r
+export default CoolDude
