@@ -1,6 +1,6 @@
 var test = require('tape')
 var tapSpec = require('tap-spec')
-var CoolDude = require('../lib/rog').default
+var CoolDude = require('../lib/rog').CoolDude
 
 test.createStream()
   .pipe(tapSpec())
@@ -16,7 +16,7 @@ test('Testing CoolDude', function (t) {
   })
 
   t.test('# CoolDude should have props object with `me.json` props', function (st) {
-    var rog3r = new CoolDude()
+    var rog3r = require('../lib/rog').default
     var me = require('../src/me.json')
     st.equal(typeof rog3r, 'object')
     st.equal(typeof rog3r.info, 'object')
@@ -30,13 +30,13 @@ test('Testing githubActivity', function (t) {
   t.plan(2)
 
   t.test('# githubActivity should be a function', function (st) {
-    var rog3r = new CoolDude()
+    var rog3r = require('../lib/rog').default
     st.equal(typeof rog3r, 'object')
     st.equal(typeof rog3r.githubActivity, 'function')
     st.end()
   })
   t.test('# githubActivity should return an object', function (st) {
-    var rog3r = new CoolDude()
+    var rog3r = require('../lib/rog').default
     rog3r.githubActivity()
     .then(function (val) {
       st.equal(typeof val, 'string')
@@ -50,13 +50,13 @@ test('Testing twitterActivity', function (t) {
   t.plan(2)
 
   t.test('# twitterActivity should be a function', function (st) {
-    var rog3r = new CoolDude()
+    var rog3r = require('../lib/rog').default
     st.equal(typeof rog3r, 'object')
     st.equal(typeof rog3r.twitterActivity, 'function')
     st.end()
   })
   t.test('# twitterActivity should return a string', function (st) {
-    var rog3r = new CoolDude()
+    var rog3r = require('../lib/rog').default
     st.equal(typeof rog3r, 'object')
     st.equal(typeof rog3r.twitterActivity, 'function')
     rog3r.twitterActivity()

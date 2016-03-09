@@ -1,7 +1,7 @@
 import request from 'request'
 const fs = require('fs')
 
-class CoolDude {
+export class CoolDude {
   constructor (props) {
     const info = JSON.parse(fs.readFileSync(`${__dirname}/me.json`, 'utf8'))
     this.props = info
@@ -40,4 +40,5 @@ class CoolDude {
 
 }
 
-export default CoolDude
+const rog3r = new CoolDude()
+export default rog3r
