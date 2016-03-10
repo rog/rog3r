@@ -1,6 +1,6 @@
 var test = require('tape')
 var tapSpec = require('tap-spec')
-var CoolDude = require('../lib/rog').CoolDude
+var CoolPerson = require('../lib/rog').CoolPerson
 
 test.createStream()
   .pipe(tapSpec())
@@ -10,7 +10,7 @@ test('Testing CoolDude', function (t) {
   t.plan(2)
 
   t.test('# CoolDude should be an object', function (st) {
-    var rog3r = new CoolDude()
+    var rog3r = new CoolPerson()
     st.equal(typeof rog3r, 'object')
     st.end()
   })
@@ -69,9 +69,9 @@ test('Testing twitterActivity', function (t) {
 
 test('Testing requestData', function (t) {
   t.test('# requestData should throw a exception', function (st) {
-    st.equal(typeof CoolDude, 'function')
-    st.equal(typeof CoolDude.requestData, 'function')
-    CoolDude.requestData('lolno')
+    st.equal(typeof CoolPerson, 'function')
+    st.equal(typeof CoolPerson.requestData, 'function')
+    CoolPerson.requestData('lolno')
     .then()
     .catch(function (e) {
       st.equal(typeof e, 'object')

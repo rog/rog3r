@@ -1,10 +1,9 @@
 import request from 'request'
-const fs = require('fs')
+import fs from 'fs'
 
-export class CoolDude {
+export class CoolPerson {
   constructor (props) {
-    const info = JSON.parse(fs.readFileSync(`${__dirname}/me.json`, 'utf8'))
-    this.props = info
+    this.props = {}
   }
 
   static requestData (url) {
@@ -31,7 +30,7 @@ export class CoolDude {
   }
 
   async githubActivity (url) {
-    return await CoolDude.requestData(`https://api.github.com/users/${this.props.github}/events`)
+    return await CoolPerson.requestData(`https://api.github.com/users/${this.props.github}/events`)
   }
 
   async twitterActivity () {
@@ -40,5 +39,13 @@ export class CoolDude {
 
 }
 
-const rog3r = new CoolDude()
+class Rog extends CoolPerson {
+  constructor () {
+    const info = JSON.parse(fs.readFileSync(`${__dirname}/me.json`, 'utf8'))
+    super()
+    this.props = info
+  }
+}
+
+const rog3r = new Rog()
 export default rog3r
