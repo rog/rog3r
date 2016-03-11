@@ -27,7 +27,7 @@ test('Testing CoolDude', function (t) {
 })
 
 test('Testing githubActivity', function (t) {
-  t.plan(2)
+  t.plan(4)
 
   t.test('# githubActivity should be a function', function (st) {
     var rog3r = require('../lib/rog').default
@@ -38,9 +38,31 @@ test('Testing githubActivity', function (t) {
   t.test('# githubActivity should return an object', function (st) {
     var rog3r = require('../lib/rog').default
     rog3r.githubActivity()
-    .then(function (val) {
-      st.equal(typeof val, 'string')
-      st.equal(typeof JSON.parse(val), 'object')
+    .then(function (activity) {
+      st.equal(typeof activity, 'object')
+    })
+    st.end()
+  })
+  t.test('# githubActivity should return the same user activity', function (st) {
+    var rog3r = require('../lib/rog').default
+    var me = require('../src/me.json')
+    rog3r.githubActivity()
+    .then(function (activity) {
+      st.equal(activity[0].actor.login, me.github)
+    })
+    st.end()
+  })
+  t.test('# githubActivity should return the same keys', function (st) {
+    var rog3r = require('../lib/rog').default
+    var keys = ['id', 'type', 'actor', 'repo', 'payload', 'public', 'created_at']
+    rog3r.githubActivity()
+    .then(function (activity) {
+      var act = [activity[0]]
+      act.forEach(function (item) {
+        for (var index in keys) {
+          st.equal(item.hasOwnProperty(keys[index]), true)
+        }
+      })
     })
     st.end()
   })
@@ -60,8 +82,8 @@ test('Testing twitterActivity', function (t) {
     st.equal(typeof rog3r, 'object')
     st.equal(typeof rog3r.twitterActivity, 'function')
     rog3r.twitterActivity()
-    .then(function (val) {
-      st.equal(typeof val, 'string')
+    .then(function (activity) {
+      st.equal(typeof activity, 'string')
     })
     st.end()
   })

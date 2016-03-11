@@ -20,7 +20,7 @@ export class CoolPerson {
           reject(err)
           return
         }
-        resolve(body)
+        resolve(JSON.parse(body))
       })
     })
   }
