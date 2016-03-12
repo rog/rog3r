@@ -40,8 +40,8 @@ test('Testing githubActivity', function (t) {
     rog3r.githubActivity()
     .then(function (activity) {
       st.equal(typeof activity, 'object')
+      st.end()
     })
-    st.end()
   })
   t.test('# githubActivity should return the same user activity', function (st) {
     var rog3r = require('../lib/rog').default
@@ -49,8 +49,8 @@ test('Testing githubActivity', function (t) {
     rog3r.githubActivity()
     .then(function (activity) {
       st.equal(activity[0].actor.login, me.github)
+      st.end()
     })
-    st.end()
   })
   t.test('# githubActivity should return the same keys', function (st) {
     var rog3r = require('../lib/rog').default
@@ -63,8 +63,8 @@ test('Testing githubActivity', function (t) {
           st.equal(item.hasOwnProperty(keys[index]), true)
         }
       })
+      st.end()
     })
-    st.end()
   })
 })
 
@@ -84,8 +84,8 @@ test('Testing twitterActivity', function (t) {
     rog3r.twitterActivity()
     .then(function (activity) {
       st.equal(typeof activity, 'string')
+      st.end()
     })
-    st.end()
   })
 })
 
@@ -97,7 +97,7 @@ test('Testing requestData', function (t) {
     .then()
     .catch(function (e) {
       st.equal(typeof e, 'object')
+      st.end()
     })
-    st.end()
   })
 })
