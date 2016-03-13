@@ -57,8 +57,7 @@ test('Testing githubActivity', function (t) {
     var keys = ['id', 'type', 'actor', 'repo', 'payload', 'public', 'created_at']
     rog3r.githubActivity()
     .then(function (activity) {
-      var act = [activity[0]]
-      act.forEach(function (item) {
+      activity.forEach(function (item) {
         for (var index in keys) {
           st.equal(item.hasOwnProperty(keys[index]), true)
         }
