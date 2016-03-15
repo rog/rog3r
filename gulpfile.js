@@ -23,7 +23,7 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('lib'))
 })
 
-gulp.task('build', ['watch', 'babel', 'copy'])
+gulp.task('build', ['babel', 'copy'])
 
 gulp.task('watch', function () {
   gulp.watch(['src/rog.js'], ['build'])
