@@ -64,6 +64,17 @@ me.githubActivity()
 
 // ...etc
 ```
+
+### Building
+1. Clone the repo: `git clone https://github.com/rogr/rog3r.git`
+2. Install the dependencies: `cd rog3r && npm install`
+3. Use gulp to build: `gulp build`
+  - Use `gulp babel` to convert the code from ES6 to ES5 with babel.
+  - Use `gulp watch` or `npm run watch` to auto build the library while developing.
+
+- With `npm test` you can run the test.
+- With `npm run report` you can see the code coverage.
+
 ---
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
