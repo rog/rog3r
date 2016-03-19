@@ -55,7 +55,7 @@ class You extends CoolPerson {
   }
 }
 
-const me = new CoolPerson()
+const me = new You()
 me.info
 me.githubActivity()
   .then( activity => {

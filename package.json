@@ -10,7 +10,7 @@
     "watch": "echo '[rog3r] Babel Starting' && gulp",
     "build": "npm run makelib && ./node_modules/.bin/babel src -d lib",
     "makelib": "rm -rf lib && mkdir lib && cp src/me.json lib/me.json",
-    "postinstall": "npm run build; echo 'Rog says Hello:'; cat lib/src/me.json",
+    "postinstall": "npm run build; echo 'Rog says Hello:'; cat lib/me.json",
     "test": "tape test/*.js",
     "coverage": "istanbul cover tape -- test/*.js",
     "report": "npm run coverage && open coverage/lcov-report/lib/rog.js.html"
