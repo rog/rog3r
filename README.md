@@ -42,7 +42,7 @@ rog3r.githubActivity()
 ```
 
 ### Hey, I'm a cool person too!
-You are right, you're a very cool person too, so you can import the `CoolPerson` Class and extend with your own data form `src/me.json` and now you can use the same methods.
+You are right, you're a very cool person too, so you can import the `CoolPerson` Class and extend with your own data from `src/me.json` and now you can use the same methods with your own data.
 
 ```js
 import CoolPerson from 'rog3r'
@@ -65,10 +65,10 @@ me.githubActivity()
 // ...etc
 ```
 
-### Building
+#### Building
 1. Clone the repo: `git clone https://github.com/rogr/rog3r.git`
 2. Install the dependencies: `cd rog3r && npm install`
-3. Use gulp to build: `gulp build`
+3. Use `gulp build` to build the library on the `lib` directory.
   - Use `gulp babel` to convert the code from ES6 to ES5 with babel.
   - Use `gulp watch` or `npm run watch` to auto build the library while developing.
 
