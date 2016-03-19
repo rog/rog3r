@@ -1,7 +1,7 @@
 {
   "name": "rog3r",
-  "version": "0.0.1",
-  "description": "Contact Information about Rogelio Alberto",
+  "version": "0.0.2",
+  "description": "Contact information and API for a cool guy named Rogelio Alberto",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -10,7 +10,7 @@
     "watch": "echo '[rog3r] Babel Starting' && gulp",
     "build": "npm run makelib && ./node_modules/.bin/babel src -d lib",
     "makelib": "rm -rf lib && mkdir lib && cp src/me.json lib/me.json",
-    "postinstall": "cat src/me.json; echo 'Rog says Hello'",
+    "postinstall": "npm run build; echo 'Rog says Hello:'; cat lib/src/me.json",
     "test": "tape test/*.js",
     "coverage": "istanbul cover tape -- test/*.js",
     "report": "npm run coverage && open coverage/lcov-report/lib/rog.js.html"
