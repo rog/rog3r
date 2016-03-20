@@ -1,4 +1,7 @@
 # [rog3r](https://github.com/rogr/rog3r)
+[![Build Status](https://travis-ci.org/rogr/rog3r.svg?branch=master)](https://travis-ci.org/rogr/rog3r)
+[![Dependency Status](https://david-dm.org/rogr/rog3r.svg)](https://david-dm.org/rogr/rog3r)
+[![NPM version](https://img.shields.io/npm/v/rog3r.svg)](https://www.npmjs.org/package/rog3r)
 
 > API about a cool guy named [`Rogelio Alberto`](https://github.com/rogr).
 
