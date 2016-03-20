@@ -9,4 +9,4 @@ before_install:
 install:
   - npm install
 after_script:
-  - NODE_ENV=test istanbul cover tap --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - NODE_ENV=test istanbul cover tape --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
