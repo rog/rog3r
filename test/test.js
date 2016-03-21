@@ -27,8 +27,6 @@ test('Testing CoolDude', function (t) {
 })
 
 test('Testing githubActivity', function (t) {
-  t.plan(4)
-
   t.test('# githubActivity should be a function', function (st) {
     var rog3r = require('../lib/rog').default
     st.equal(typeof rog3r, 'object')
