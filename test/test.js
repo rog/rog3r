@@ -43,9 +43,10 @@ test('Testing githubActivity', function (t) {
   })
   t.test('# githubActivity should return the same user activity', function (st) {
     var rog3r = require('../lib/rog').default
-    var me = require('../src/me.json')
+    var me = require('../lib/me.json')
     rog3r.githubActivity()
     .then(function (activity) {
+      console.log(activity[0].actor.login, me.github)
       st.equal(activity[0].actor.login, me.github)
       st.end()
     })
