@@ -41,21 +41,13 @@ test('Testing githubActivity', function (t) {
       st.end()
     })
   })
-  t.test('# githubActivity should return the same user activity', function (st) {
+  t.test('# githubActivity should return the same user and keys', function (st) {
     var rog3r = require('../lib/rog').default
     var me = require('../lib/me.json')
-    rog3r.githubActivity()
-    .then(function (activity) {
-      console.log(activity[0].actor.login, me.github)
-      st.equal(activity[0].actor.login, me.github)
-      st.end()
-    })
-  })
-  t.test('# githubActivity should return the same keys', function (st) {
-    var rog3r = require('../lib/rog').default
     var keys = ['id', 'type', 'actor', 'repo', 'payload', 'public', 'created_at']
     rog3r.githubActivity()
     .then(function (activity) {
+      st.equal(activity[0].actor.login, me.github)
       activity.forEach(function (item) {
         for (var index in keys) {
           st.equal(item.hasOwnProperty(keys[index]), true)
