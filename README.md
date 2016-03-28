@@ -81,7 +81,7 @@ me.githubActivity()
 
 ---
 #### [License](LICENSE)
-Released under the [MIT license](LICENSE).
+Released under the [Beerware License](LICENSE).
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
