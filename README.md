@@ -1,7 +1,7 @@
 # [rog3r](https://github.com/rogr/rog3r)
 > API about a cool guy named [`Rogelio Alberto`](https://github.com/rogr).
 
-[![Build Status](https://travis-ci.org/rogr/rog3r.svg?branch=master)](https://travis-ci.org/rogr/rog3r)
+[![Build Status](https://camo.githubusercontent.com/3658111a0f9e3c8ac936d83f9598c7a856ae9fd0/68747470733a2f2f7472617669732d63692e6f72672f536965647269782f706170657270726573732e7376673f6272616e63683d6d6173746572)](https://travis-ci.org/rogr/rog3r/builds/128596017)
 [![Coverage Status](https://coveralls.io/repos/github/rogr/rog3r/badge.svg?branch=master)](https://coveralls.io/github/rogr/rog3r?branch=master)
 [![Dependency Status](https://david-dm.org/rogr/rog3r.svg)](https://david-dm.org/rogr/rog3r)
 [![NPM version](https://img.shields.io/npm/v/rog3r.svg)](https://www.npmjs.org/package/rog3r)
