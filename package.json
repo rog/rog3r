@@ -1,59 +1,27 @@
 {
   "name": "rog3r",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Contact information and API for a cool guy named Rogelio Alberto",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "main": "./lib/rog.js",
   "scripts": {
-    "watch": "echo '[rog3r] Babel Starting' && gulp",
-    "build": "npm run makelib && ./node_modules/.bin/babel src -d lib",
-    "makelib": "rm -rf lib && mkdir lib && cp src/me.json lib/me.json",
-    "postinstall": "npm run build; echo 'Rog says Hello:'; cat lib/me.json",
-    "test": "tape test/*.js",
-    "coverage": "istanbul cover tape -- test/*.js",
-    "report": "npm run coverage && open coverage/lcov-report/lib/rog.js.html"
   },
   "author": "Rogelio Alberto",
   "license": "Beerware",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rogr/rog3r"
+    "url": "https://github.com/rog/rog3r"
   },
   "keywords": [
     "person",
     "contact"
   ],
   "dependencies": {
-    "request": "^2.72.0"
+    "request": "^2.80.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.8.0",
-    "babel-core": "^6.8.0",
-    "babel-eslint": "^6.0.4",
-    "babel-plugin-transform-runtime": "^6.8.0",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-runtime": "^6.6.1",
-    "chalk": "^1.1.3",
-    "coveralls": "^2.11.9",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.3",
-    "istanbul": "^0.4.3",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.5.1"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ]
   },
   "standard": {
     "parser": "babel-eslint"
