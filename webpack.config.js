@@ -1,13 +1,21 @@
-const webpack = require('webpack')
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 const path = require('path')
+const webpack = require('webpack')
 const env = require('yargs').argv.env
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 
 const libraryName = 'rog'
 const plugins = [
   new webpack.ProvidePlugin({
     'Promise': 'exports-loader?global.Promise!es6-promise',
     'window.fetch': 'exports-loader?self.fetch!fetch-everywhere'
+  }),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      tslint: {
+        emitErrors: true,
+        failOnHint: true
+      }
+    }
   })
 ]
 let outputFile
@@ -20,7 +28,7 @@ if (env === 'build') {
 }
 
 const config = {
-  entry: ['babel-polyfill', 'fetch-everywhere', path.resolve(__dirname, 'src/rog.js')],
+  entry: ['fetch-everywhere', path.resolve(__dirname, 'src/rog.ts')],
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: outputFile,
@@ -31,18 +39,22 @@ const config = {
   module: {
     rules: [
       {
-        test: /(\.jsx|\.js)$/,
-        loader: 'babel-loader',
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        loader: 'tslint-loader',
         exclude: /(node_modules)/
+      }, {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },
   resolve: {
-    modules: ['app', 'node_modules'],
+    modules: ['src', 'node_modules'],
     extensions: [
       '.js',
-      '.jsx',
-      '.react.js'
+      '.ts'
     ],
     mainFields: [
       'browser',
