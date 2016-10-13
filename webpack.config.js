@@ -13,7 +13,8 @@ const plugins = [
     options: {
       tslint: {
         emitErrors: true,
-        failOnHint: true
+        failOnHint: true,
+        typeCheck: true
       }
     }
   })

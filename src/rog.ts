@@ -5,6 +5,10 @@ interface Person {
   github?: string
 }
 
+interface Response {
+  json?: Function
+}
+
 export class CoolPerson {
   constructor (public props: Person) {
     this.props = props
@@ -18,7 +22,7 @@ export class CoolPerson {
       }
     }
 
-    let response = await fetch(request.url, request.headers)
+    let response: Response = await fetch(request.url, request.headers)
     let data: Array<{}> = await response.json()
 
     return data
