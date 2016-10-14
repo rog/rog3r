@@ -5,7 +5,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "./lib/rog.min.js",
+  "main": "./lib/rog.js",
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
@@ -29,8 +29,12 @@
     "fetch-everywhere": "^1.0.5"
   },
   "devDependencies": {
+    "coveralls": "^2.13.0",
     "exports-loader": "^0.6.4",
+    "istanbul": "^0.4.5",
     "source-map-loader": "^0.2.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
     "ts-loader": "^2.0.3",
     "tslint": "^5.0.0",
     "tslint-config-standard": "^5.0.2",

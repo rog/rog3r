@@ -43,21 +43,19 @@ test('Testing githubActivity', function (t) {
   })
   t.test('# githubActivity should return the same user and keys', function (st) {
     var rog3r = require('../lib/rog').default
-    var me = require('../lib/me.json')
+    var me = require('../src/me.json')
     var keys = ['id', 'type', 'actor', 'repo', 'payload', 'public', 'created_at']
     rog3r.githubActivity()
     .then(function (activity) {
       st.equal(activity[0].actor.login, me.github)
-      activity.forEach(function (item) {
-        for (var index in keys) {
-          st.equal(item.hasOwnProperty(keys[index]), true)
-        }
-      })
+      for (var index in keys) {
+        st.equal(activity[0].hasOwnProperty(keys[index]), true)
+      }
       st.end()
     })
   })
 })
-
+/*
 test('Testing twitterActivity', function (t) {
   t.plan(2)
 
@@ -91,3 +89,4 @@ test('Testing requestData', function (t) {
     })
   })
 })
+*/
