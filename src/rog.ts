@@ -10,8 +10,8 @@ interface Response {
 }
 
 export class CoolPerson {
-  constructor (public props: Person) {
-    this.props = props
+  constructor (public info: Person) {
+    this.info = info
   }
 
   async requestData (url: string): Promise<{}> {
@@ -29,14 +29,14 @@ export class CoolPerson {
   }
 
   githubActivity (): Promise<{}> {
-    const github: string = (this.props as Person).github
+    const github: string = (this.info as Person).github
     return this.requestData(`https://api.github.com/users/${github}/events`)
   }
 }
 
 class Rog extends CoolPerson {
-  constructor (public props: Person) {
-    super(props)
+  constructor (public info: Person) {
+    super(info)
   }
 }
 
