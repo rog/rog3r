@@ -23,7 +23,7 @@ let outputFile
 
 if (env === 'build') {
   plugins.push(new UglifyJsPlugin({ minimize: true }))
-  outputFile = libraryName + '.js'
+  outputFile = 'index.js'
 } else {
   outputFile = libraryName + '.dev.js'
 }
