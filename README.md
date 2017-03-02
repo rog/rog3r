@@ -1,9 +1,9 @@
-# [rog3r](https://github.com/rogr/rog3r)
-> API about a cool guy named [`Rogelio Alberto`](https://github.com/rogr).
+# [rog3r](https://github.com/rog/rog3r)
+> API about a cool guy named [`Rogelio Alberto`](https://github.com/rog).
 
-[![Build Status](https://camo.githubusercontent.com/3658111a0f9e3c8ac936d83f9598c7a856ae9fd0/68747470733a2f2f7472617669732d63692e6f72672f536965647269782f706170657270726573732e7376673f6272616e63683d6d6173746572)](https://travis-ci.org/rogr/rog3r/builds/128596017)
-[![Coverage Status](https://coveralls.io/repos/github/rogr/rog3r/badge.svg?branch=master)](https://coveralls.io/github/rogr/rog3r?branch=master)
-[![Dependency Status](https://david-dm.org/rogr/rog3r.svg)](https://david-dm.org/rogr/rog3r)
+[![Build Status](https://camo.githubusercontent.com/3658111a0f9e3c8ac936d83f9598c7a856ae9fd0/68747470733a2f2f7472617669732d63692e6f72672f536965647269782f706170657270726573732e7376673f6272616e63683d6d6173746572)](https://travis-ci.org/rog/rog3r/builds/128596017)
+[![Coverage Status](https://coveralls.io/repos/github/rog/rog3r/badge.svg?branch=master)](https://coveralls.io/github/rog/rog3r?branch=master)
+[![Dependency Status](https://david-dm.org/rog/rog3r.svg)](https://david-dm.org/rog/rog3r)
 [![NPM version](https://img.shields.io/npm/v/rog3r.svg)](https://www.npmjs.org/package/rog3r)
 
 [![NPM](https://nodei.co/npm/rog3r.png?downloads=true)](https://nodei.co/npm/rog3r/)
@@ -29,7 +29,7 @@ Return the content from [`src/me.json`](src/me.json):
 console.log(rog3r.info)
 /* Return:
 {
-  github: rogr,
+  github: rog,
   twitter: rog3r,
   ...
 }
@@ -70,7 +70,7 @@ me.githubActivity()
 ```
 
 #### Building
-1. Clone the repo: `git clone https://github.com/rogr/rog3r.git`
+1. Clone the repo: `git clone https://github.com/rog/rog3r.git`
 2. Install the dependencies: `cd rog3r && npm install`
 3. Use `gulp build` to build the library on the `lib` directory.
   - Use `gulp babel` to convert the code from ES6 to ES5 with babel.
@@ -87,7 +87,7 @@ Released under the [Beerware License](LICENSE).
 
 ![forthebadge](http://forthebadge.com/images/badges/as-seen-on-tv.svg)
 ![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)
-[![rog3r](http://i.imgur.com/sbIc3yU.png)](https://github.com/rogr)
+[![rog3r](http://i.imgur.com/sbIc3yU.png)](https://github.com/rog)
 
 
 <sub>_(what a cool guy!)_</sub>
