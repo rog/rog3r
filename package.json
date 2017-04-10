@@ -1,6 +1,6 @@
 {
   "name": "rog3r",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Contact information and API for a cool guy named Rogelio Alberto",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
